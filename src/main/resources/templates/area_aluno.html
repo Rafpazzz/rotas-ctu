@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Area_Aluno</title>
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .foto-user{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .foto-user img{
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .container-central {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 20px;
+        }
+
+
+        .botao-principal {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 250px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .botao-principal:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .name-user{
+            position: absolute;
+            top: 5px;
+            right: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="foto-user"><img src="" alt="Foto Usuário"></div>
+<p class="name-user" >Nome</p>
+<div class="container-central">
+    <a href="/cadastro" class="botao-principal">Cadastrar Solicitação</a>
+    <a href="/agenda" class="botao-principal">Ver Agenda</a>
+</div>
+</body>
+</html>
