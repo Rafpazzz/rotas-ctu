@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Area_Aluno2</title>
+    <link rel="stylesheet" th:href="@{/css/area_aluno_style.css}" >
+</head>
+
+<body>
+
+<div class="barra-superior"></div>
+
+<div class="profile-container">
+    <p class="name-user" >Nome Usuario</p>
+    <div class="foto-user">
+        <img src="" th:src="@{/images/default-user.png}" alt="Foto Usuário">
+    </div>
+
+    <nav id="dropdown-menu" class="dropdown-menu">
+        <a href="/perfil">Meu Perfil</a>
+        <a href="/configuracoes">Configurações</a>
+        <a href="/ajuda">Ajuda</a>
+        <a href="/logout">Sair</a>
+    </nav>
+</div>
+
+<nav id="right-side-menu" class="right-side-menu">
+    <button class="close-btn" id="close-right-menu-btn">&times;</button>
+    <div id="right-menu-content">
+        <h3>Menu de Ações</h3>
+    </div>
+</nav>
+
+<div class="container-central">
+    <button onclick="openRightMenu('cadastro')" class="botao-principal">Cadastrar Solicitação</button>
+    <button onclick="openRightMenu('agenda')" class="botao-principal">Ver Agenda</button>
+</div>
+
+<script>
+    /* --- LÓGICA PARA O MENU DROPDOWN DA FOTO --- */
+    const userPhoto = document.querySelector('.foto-user');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    userPhoto.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('active');
+    });
+
+    // Fecha o dropdown se o usuário clicar fora dele
+    window.addEventListener('click', (event) => {
+        if (!userPhoto.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove('active');
+        }
+    });
+
+    /* --- LÓGICA PARA O MENU LATERAL DIREITO --- */
+    const rightMenu = document.getElementById('right-side-menu');
+    const closeRightMenuBtn = document.getElementById('close-right-menu-btn');
+    const rightMenuContent = document.getElementById('right-menu-content');
+
+    function openRightMenu(menuType) {
+        // Você pode customizar o conteúdo do menu aqui
+        if (menuType === 'cadastro') {
+            rightMenuContent.innerHTML = '<h3>Opções de Cadastro</h3><p>Formulário de cadastro aqui...</p>';
+        } else if (menuType === 'agenda') {
+            rightMenuContent.innerHTML = '<h3>Visualizar Agenda</h3><p>Conteúdo da agenda aqui...</p>';
+        }
+        rightMenu.classList.add('open');
+    }
+
+    closeRightMenuBtn.addEventListener('click', () => {
+        rightMenu.classList.remove('open');
+    });
+
+</script>
+
+</body>
+</html>
