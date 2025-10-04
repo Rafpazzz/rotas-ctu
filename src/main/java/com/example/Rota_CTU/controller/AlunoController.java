@@ -10,4 +10,9 @@ public class AlunoController {
     public String telaInicial() {
         return "login";
     }
+
+    @RequestMapping("/area-aluno")
+    public String areaAluno() {
+        return "area_aluno2";
+    }
 }
