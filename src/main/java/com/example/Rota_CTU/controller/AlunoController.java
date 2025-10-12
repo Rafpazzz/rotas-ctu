@@ -13,6 +13,6 @@ public class AlunoController {
 
     @RequestMapping("/area-aluno")
     public String areaAluno() {
-        return "area_aluno";
+        return "area_aluno2";
     }
 }
