@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title th:text="${pageTitle}">Configurações</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/resources/static/css/style-config.css">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="/static/css/style-config.css">
 </head>
-
-<main class ="configurações-principais">
+<body>
+<main class="configurações-principais">
     <nav>
         <h1>CONFIGURAÇÕES</h1>
         <ul>
-            <li><a th:href="@{/info-pessoais}">Informações pessoais</a></li>
-            <li><a th:href="@{/Sobre}">Sobre</a></li>
-
+            <li><a href="/info-pessoais">Informações pessoais</a></li>
+            <li><a href="/Sobre">Sobre</a></li>
         </ul>
-
     </nav>
-
 </main>
-
+</body>
 </html>
